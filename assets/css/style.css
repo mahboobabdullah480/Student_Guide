@@ -1,0 +1,1209 @@
+/* ==========================================
+   SMART IT GUIDE - PREMIUM MODERN UI
+   RTL + DARK MODE + GLASSMORPHISM
+========================================== */
+
+:root{
+  --primary:#4F46E5;
+  --primary-hover:#4338CA;
+
+  --secondary:#06B6D4;
+  --accent:#F59E0B;
+
+  --bg:#F8FAFC;
+  --surface:#FFFFFF;
+  --surface-2:#F1F5F9;
+
+  --text:#0F172A;
+  --text-light:#64748B;
+
+  --border:#E2E8F0;
+
+  --radius:20px;
+
+  --shadow:
+  0 10px 25px rgba(0,0,0,.08);
+
+  --shadow-hover:
+  0 20px 50px rgba(79,70,229,.15);
+
+  --transition:.35s ease;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:
+  "Tajawal",
+  sans-serif;
+
+  direction:rtl;
+
+  color:var(--text);
+
+  line-height:1.8;
+
+  background:
+  radial-gradient(
+    circle at top right,
+    rgba(99,102,241,.12),
+    transparent 35%
+  ),
+  radial-gradient(
+    circle at bottom left,
+    rgba(6,182,212,.12),
+    transparent 35%
+  ),
+  var(--bg);
+
+  min-height:100vh;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1,h2,h3,h4,h5{
+  color:var(--text);
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+h1{
+  font-size:clamp(2rem,4vw,3.5rem);
+}
+
+h2{
+  font-size:clamp(1.5rem,3vw,2.5rem);
+}
+
+p{
+  color:var(--text-light);
+}
+
+a{
+  text-decoration:none;
+  color:var(--primary);
+  transition:var(--transition);
+}
+
+a:hover{
+  color:var(--primary-hover);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:
+  rgba(255,255,255,.75);
+
+  backdrop-filter:
+  blur(18px);
+
+  border-bottom:
+  1px solid rgba(255,255,255,.3);
+
+  box-shadow:
+  0 4px 30px rgba(0,0,0,.05);
+}
+
+.navbar{
+  min-height:75px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:1.3rem;
+  font-weight:800;
+
+  color:var(--text);
+}
+
+.logo{
+  width:42px;
+  height:42px;
+
+  border-radius:12px;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  color:white;
+  font-weight:bold;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav-links a{
+  padding:10px 15px;
+  border-radius:12px;
+  font-weight:600;
+}
+
+.nav-links a:hover{
+  background:var(--surface-2);
+}
+
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+.nav-toggle{
+  display:none;
+
+  border:none;
+
+  background:var(--surface);
+
+  border-radius:12px;
+
+  padding:10px 14px;
+
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+
+  .nav-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+
+    position:absolute;
+
+    top:75px;
+    right:0;
+    left:0;
+
+    flex-direction:column;
+
+    background:white;
+
+    padding:20px;
+
+    border-bottom:
+    1px solid var(--border);
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.jumbotron{
+  margin-top:40px;
+
+  background:
+  rgba(255,255,255,.75);
+
+  backdrop-filter:
+  blur(15px);
+
+  border:
+  1px solid rgba(255,255,255,.4);
+
+  border-radius:
+  28px;
+
+  padding:
+  clamp(25px,4vw,60px);
+
+  box-shadow:
+  var(--shadow);
+}
+
+.display-4{
+  line-height:1.2;
+  margin-bottom:15px;
+}
+
+.lead{
+  font-size:1.1rem;
+  max-width:700px;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:12px 22px;
+
+  border:none;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-weight:700;
+
+  transition:var(--transition);
+}
+
+.btn-primary{
+
+  color:white;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  box-shadow:
+  0 10px 25px rgba(79,70,229,.25);
+}
+
+.btn-primary:hover{
+
+  transform:
+  translateY(-3px);
+
+  box-shadow:
+  0 20px 40px rgba(79,70,229,.35);
+}
+
+.btn-outline{
+
+  border:
+  2px solid var(--primary);
+
+  background:transparent;
+
+  color:var(--primary);
+}
+
+.btn-outline:hover{
+
+  background:var(--primary);
+
+  color:white;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card{
+
+  background:
+  rgba(255,255,255,.8);
+
+  backdrop-filter:
+  blur(15px);
+
+  border:
+  1px solid rgba(255,255,255,.5);
+
+  border-radius:
+  24px;
+
+  padding:24px;
+
+  box-shadow:
+  var(--shadow);
+
+  transition:
+  var(--transition);
+}
+
+.card:hover{
+
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  var(--shadow-hover);
+}
+
+.card-title{
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.grid{
+  display:grid;
+  gap:24px;
+}
+
+.grid-2{
+  grid-template-columns:
+  repeat(2,1fr);
+}
+
+.grid-3{
+  grid-template-columns:
+  repeat(3,1fr);
+}
+
+
+/* تحسين الجوال */
+
+@media (max-width: 768px){
+
+  .container{
+    width:95%;
+  }
+
+  .jumbotron{
+    padding:20px;
+  }
+
+  h1{
+    font-size:1.8rem;
+  }
+
+  h2{
+    font-size:1.4rem;
+  }
+
+  .btn{
+    width:100%;
+    margin-top:10px;
+  }
+
+  .navbar{
+    min-height:65px;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+}
+
+/* شاشات صغيرة جداً */
+
+@media (max-width:480px){
+
+  body{
+    font-size:15px;
+  }
+
+  .display-4{
+    font-size:1.7rem;
+  }
+
+  .lead{
+    font-size:.95rem;
+  }
+
+  .logo{
+    width:36px;
+    height:36px;
+  }
+  
+
+  .grid-2,
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ==========================================
+   FORMS
+========================================== */
+
+input,
+textarea,
+select{
+
+  width:100%;
+
+  padding:14px;
+
+  border:
+  1px solid var(--border);
+
+  border-radius:14px;
+
+  font-family:inherit;
+
+  transition:
+  var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+  outline:none;
+
+  border-color:
+  var(--primary);
+
+  box-shadow:
+  0 0 0 4px rgba(79,70,229,.15);
+}
+
+label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+
+    margin-top:60px;
+
+    background:#0f172a;
+
+    color:#cbd5e1;
+
+    padding:30px 0 15px;
+}
+
+.footer-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer-brand h3{
+
+    color:white;
+
+    margin-bottom:8px;
+}
+
+.footer-brand p{
+
+    margin:0;
+
+    max-width:500px;
+}
+
+.footer-links{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+
+    color:#cbd5e1;
+
+    font-weight:600;
+}
+
+.footer-links a:hover{
+
+    color:white;
+}
+
+.footer-divider{
+
+    margin:20px 0;
+
+    border:none;
+
+    height:1px;
+
+    background:#334155;
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    font-size:.95rem;
+}
+
+.footer-bottom p{
+
+    margin:5px 0;
+}
+
+/* الجوال */
+
+@media(max-width:768px){
+
+    .footer-top{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .footer-links{
+
+        justify-content:center;
+    }
+
+}
+
+
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+.fade-up{
+
+  opacity:0;
+
+  transform:
+  translateY(40px);
+
+  animation:
+  fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+
+  to{
+    opacity:1;
+    transform:
+    translateY(0);
+  }
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-mode{
+
+  background:#0F172A;
+
+  color:#F8FAFC;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4{
+  color:white;
+}
+
+body.dark-mode p{
+  color:#CBD5E1;
+}
+
+body.dark-mode .header{
+
+  background:
+  rgba(15,23,42,.85);
+}
+
+body.dark-mode .card{
+
+  background:#1E293B;
+
+  border:
+  1px solid #334155;
+}
+
+body.dark-mode .jumbotron{
+
+  background:#1E293B;
+
+  border:
+  1px solid #334155;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+
+  background:#1E293B;
+
+  color:white;
+
+  border-color:#334155;
+}
+
+body.dark-mode .nav-links a{
+  color:white;
+}
+
+body.dark-mode .footer{
+  background:#020617;
+}
+
+
+/* ==========================================
+   HELPERS
+========================================== */
+
+.mt-2{
+  margin-top:10px;
+}
+
+.mt-3{
+  margin-top:15px;
+}
+
+.mt-4{
+  margin-top:20px;
+}
+
+.mt-6{
+  margin-top:60px;
+}
+
+.mb-4{
+  margin-bottom:25px;
+}
+
+.text-center{
+  text-align:center;
+}
+
+/* ==========================================
+   GRID 4
+========================================== */
+
+.grid-4{
+  grid-template-columns:
+  repeat(4,1fr);
+}
+
+@media(max-width:900px){
+
+  .grid-4{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .grid-4{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* ==========================================
+   HERO IMPROVEMENTS
+========================================== */
+
+.jumbotron{
+  text-align:center;
+}
+
+.jumbotron .btn{
+  margin:8px;
+}
+
+/* ==========================================
+   STATISTICS
+========================================== */
+
+.grid-4 .card h2{
+  color:var(--primary);
+  font-size:2.2rem;
+}
+
+/* ==========================================
+   SECTION TITLES
+========================================== */
+
+section h2{
+  margin-bottom:30px;
+}
+
+/* ==========================================
+   CARD EFFECTS
+========================================== */
+
+.card h3{
+  margin-bottom:12px;
+}
+
+.card p{
+  margin-bottom:10px;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+
+/* ==========================================
+   SECTION SPACING
+========================================== */
+
+section{
+  margin-bottom:70px;
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(79,70,229,.1);
+  color:var(--primary);
+  font-size:.9rem;
+  font-weight:700;
+}
+
+/* ==========================================
+   FEATURE ICON
+========================================== */
+
+.feature-icon{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+/* ==========================================
+   LISTS
+========================================== */
+
+.list{
+  list-style:none;
+  padding:0;
+}
+
+.list li{
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.list li:last-child{
+  border-bottom:none;
+}
+
+/* ==========================================
+   CTA SECTION
+========================================== */
+
+.cta-section{
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color:white;
+
+  border-radius:30px;
+
+  padding:50px 30px;
+
+  text-align:center;
+
+  box-shadow:
+  0 20px 50px rgba(79,70,229,.25);
+}
+
+.cta-section p{
+  color:white;
+}
+
+/* ==========================================
+   TABLES
+========================================== */
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.table th,
+.table td{
+  border:1px solid var(--border);
+  padding:12px;
+  text-align:center;
+}
+
+.table th{
+  background:var(--surface-2);
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#e2e8f0;
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--primary);
+  border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:var(--primary-hover);
+}
+
+/* ==========================================
+   PAGE HEADER
+========================================== */
+
+.page-header{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.page-header p{
+  max-width:800px;
+  margin:auto;
+}
+
+/* ==========================================
+   DARK MODE EXTRA
+========================================== */
+
+body.dark-mode .table th{
+  background:#334155;
+}
+
+body.dark-mode .table td{
+  border-color:#334155;
+}
+
+body.dark-mode .badge{
+  background:#312E81;
+  color:white;
+}
+
+body.dark-mode .list li{
+  border-color:#334155;
+}
+
+
+
+
+
+.stats-card{
+    text-align:center;
+    padding:30px;
+}
+
+.stats-card h2{
+    font-size:3rem;
+    margin-bottom:10px;
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.jumbotron{
+    position:relative;
+    overflow:hidden;
+}
+
+.jumbotron::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(79,70,229,.08);
+    top:-120px;
+    right:-120px;
+}
+
+.jumbotron::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:rgba(6,182,212,.08);
+    bottom:-100px;
+    left:-100px;
+}
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    right:10px;
+    width:0;
+    height:3px;
+    background:var(--primary);
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:70%;
+}
+
+#scrollTop{
+
+    position:fixed;
+
+    bottom:20px;
+    left:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:9999;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+    );
+
+    transition:.8s;
+}
+
+.card:hover::before{
+    left:100%;
+}
+
+.social-links{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.social-links a{
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#1e293b;
+
+    color:white;
+
+    transition:.3s;
+}
+
+.social-links a:hover{
+
+    transform:translateY(-5px);
+
+    background:var(--primary);
+}
+
+/* ==========================================
+   SOCIAL LINKS
+========================================== */
+
+.social-links{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.social-links a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#1E293B;
+
+    color:white;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.social-links a:hover{
+
+    transform:translateY(-5px);
+
+    background:var(--primary);
+}
+
+/* ==========================================
+   SCROLL TO TOP
+========================================== */
+
+#scrollTop{
+
+    position:fixed;
+
+    bottom:20px;
+
+    left:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:9999;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+#scrollTop:hover{
+
+    transform:
+    translateY(-5px);
+}
